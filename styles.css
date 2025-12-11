@@ -1,27 +1,25 @@
 /* ============================================
-   GARLIC ATLAS - ARTISTIC EDITION
-   Matching the Hand-Drawn Watercolor Map Aesthetic
-   Design Philosophy: BOLD, PLAYFUL, ILLUSTRATION-FORWARD
+   GARLIC ATLAS - Refined Hand-Drawn Edition
+   Design Philosophy: SIMPLICITY + SUBTLE CHARACTER
+   Less decoration, more elegance
    ============================================ */
 
 /* ============================================
-   COLOR PALETTE - Continental Watercolors
+   COLOR PALETTE
    ============================================ */
 :root {
-  /* Map Background */
+  /* Background - Warm paper tone */
   --bg-color: #F5F3ED;
 
   /* Typography */
   --text-color: #2D2420;
   --secondary-text: #5D5654;
 
-  /* Continental Colors - BOLD VERSION */
+  /* Continental accent colors - used sparingly */
   --color-asia: #F2C94C;
   --color-europe: #5B8FC4;
   --color-north-america: #E67E4D;
-  --color-south-america: #8B5A9E;
   --color-africa: #6FB88F;
-  --color-oceania: #6FB88F;
 
   /* Typography */
   --font-heading: "Helvetica Neue", "Arial", sans-serif;
@@ -29,7 +27,7 @@
 }
 
 /* ============================================
-   GLOBAL RESET & BOLD BASE
+   GLOBAL BASE - Clean Foundation
    ============================================ */
 * {
   box-sizing: border-box;
@@ -41,442 +39,234 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-body);
-  line-height: 1.75;
-  padding: 40px 24px;
-  max-width: 600px;
+  line-height: 1.7;
+  padding: 48px 24px;
+  max-width: 580px;
   margin: 0 auto;
-  position: relative;
-  overflow-x: hidden;
 
-  /* BOLD WATERCOLOR WASHES - multiple overlapping color circles */
-  background-image:
-    radial-gradient(circle at 15% 20%, rgba(91, 143, 196, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 40%, rgba(242, 201, 76, 0.10) 0%, transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(230, 126, 77, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 10% 60%, rgba(111, 184, 143, 0.09) 0%, transparent 35%);
+  /* ONE subtle watercolor wash - barely visible */
+  background-image: radial-gradient(
+    circle at 70% 25%,
+    rgba(91, 143, 196, 0.035) 0%,
+    transparent 65%
+  );
 }
 
 /* ============================================
-   HEADER - DRAMATIC ARTISTIC TITLE
+   HEADER - Refined and Elegant
    ============================================ */
 header {
   text-align: center;
-  margin-bottom: 56px;
-  position: relative;
-  padding: 32px 0;
-}
-
-/* BOLD decorative watercolor splash behind header */
-header::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 200px;
-  height: 200px;
-  background: var(--accent-color, #5B8FC4);
-  opacity: 0.06;
-  border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
-  z-index: -1;
-}
-
-/* Secondary organic shape */
-header::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%) rotate(12deg);
-  width: 120px;
-  height: 5px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--accent-color, #5B8FC4) 20%,
-    var(--accent-color, #5B8FC4) 80%,
-    transparent 100%
-  );
-  opacity: 0.25;
-  border-radius: 3px;
+  margin-bottom: 52px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(45, 36, 32, 0.06);
 }
 
 .flag {
-  font-size: 5.5rem;
+  font-size: 3.5rem;
   display: block;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   line-height: 1;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
-  animation: gentle-bounce 3s ease-in-out infinite;
-}
-
-@keyframes gentle-bounce {
-  0%, 100% { transform: translateY(0px) scale(1); }
-  50% { transform: translateY(-6px) scale(1.02); }
+  opacity: 0.95;
 }
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 3.25rem;
-  font-weight: 700; /* BOLD instead of light */
-  margin-bottom: 18px;
-  letter-spacing: 0.08em;
-  line-height: 1.1;
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-bottom: 14px;
+  letter-spacing: 0.18em; /* Wide, elegant spacing */
+  line-height: 1.2;
   text-transform: uppercase;
-
-  /* GRADIENT TEXT EFFECT */
-  background: linear-gradient(
-    135deg,
-    var(--accent-color, #5B8FC4) 0%,
-    rgba(242, 201, 76, 0.8) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-
-  /* Fallback for browsers that don't support background-clip */
-  color: var(--accent-color, #5B8FC4);
+  color: var(--text-color);
 }
 
 .tagline {
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: 1.05rem;
   color: var(--secondary-text);
   font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
 }
 
 /* ============================================
-   SECTIONS - BOLD COLOR BLOCK CARDS
+   SECTIONS - Clean Cards with Subtle Character
    ============================================ */
 section {
-  /* BOLD COLORED BACKGROUND instead of white */
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.85) 100%
-  );
-  border: none;
-  border-radius: 28px;
-  padding: 36px 32px;
-  margin-bottom: 32px;
-  position: relative;
-  overflow: visible; /* Allow decorations to overflow */
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(45, 36, 32, 0.08);
+  border-radius: 6px;
+  padding: 32px 28px;
+  margin-bottom: 36px; /* Generous whitespace between sections */
 
-  /* Stronger shadow for more presence */
-  box-shadow:
-    0 2px 8px rgba(45, 36, 32, 0.08),
-    0 16px 48px rgba(45, 36, 32, 0.06);
+  /* Minimal shadow - just enough for depth */
+  box-shadow: 0 1px 3px rgba(45, 36, 32, 0.03);
 
-  /* IRREGULAR SHAPE - slight clip-path for organic feel */
-  clip-path: polygon(
-    0 2%,
-    2% 0,
-    98% 0,
-    100% 2%,
-    100% 98%,
-    98% 100%,
-    2% 100%,
-    0 98%
-  );
-}
-
-/* LARGE BOLD WATERCOLOR WASH behind section */
-section::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  width: 220px;
-  height: 220px;
-  background: var(--accent-color, #5B8FC4);
-  opacity: 0.10;
-  border-radius: 42% 58% 55% 45% / 48% 62% 38% 52%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* SECOND ORGANIC SHAPE - layered watercolor effect */
-section::after {
-  content: '';
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
-  width: 180px;
-  height: 180px;
-  background: rgba(242, 201, 76, 0.08);
-  border-radius: 60% 40% 45% 55% / 55% 48% 52% 45%;
-  z-index: -1;
-  pointer-events: none;
+  /* Subtle accent color hint on left edge */
+  border-left: 2px solid rgba(var(--accent-rgb, 91, 143, 196), 0.2);
 }
 
 /* ============================================
-   SECTION HEADINGS - BOLD ARTISTIC TYPOGRAPHY
+   SECTION HEADINGS - Hand-Drawn Typography
    ============================================ */
 h2 {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  font-weight: 900; /* EXTRA BOLD */
+  font-size: 0.7rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em; /* Very wide, refined */
   color: var(--accent-color, #5B8FC4);
-  margin-bottom: 24px;
-  position: relative;
-  padding-left: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 
-  /* Add colored underline */
-  padding-bottom: 12px;
-  border-bottom: 4px solid var(--accent-color, #5B8FC4);
-  border-radius: 2px;
-
-  /* Subtle gradient in text */
-  background: linear-gradient(
-    120deg,
-    var(--accent-color, #5B8FC4) 0%,
-    rgba(242, 201, 76, 0.9) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Decorative circle instead of line */
-h2::before {
-  content: '';
-  position: absolute;
-  left: -8px;
-  top: -8px;
-  width: 12px;
-  height: 12px;
-  background: var(--accent-color, #5B8FC4);
-  border-radius: 50%;
-  opacity: 0.6;
+  /* Simple underline - hand-drawn quality */
+  border-bottom: 1px solid currentColor;
+  opacity: 0.85;
 }
 
 /* ============================================
-   SENSORY GRID - COLORFUL WATERCOLOR BOXES
+   SENSORY GRID - Minimal and Clear
    ============================================ */
 .sensory-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 16px;
+  margin-top: 20px;
 }
 
 .sensory-item {
-  /* BOLD COLORED BACKGROUNDS - rotate through continental colors */
-  padding: 22px 18px;
-  border-radius: 18px;
-  border: 3px solid transparent;
-  position: relative;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 18px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(45, 36, 32, 0.06);
 
-  /* Stronger shadow */
-  box-shadow: 0 4px 16px rgba(45, 36, 32, 0.08);
+  /* Subtle hover - not dramatic */
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-/* Color rotation for sensory items */
-.sensory-item:nth-child(1) {
-  background: linear-gradient(
-    135deg,
-    rgba(91, 143, 196, 0.20) 0%,
-    rgba(91, 143, 196, 0.12) 100%
-  );
-  border-color: rgba(91, 143, 196, 0.25);
-}
-
-.sensory-item:nth-child(2) {
-  background: linear-gradient(
-    135deg,
-    rgba(242, 201, 76, 0.22) 0%,
-    rgba(242, 201, 76, 0.14) 100%
-  );
-  border-color: rgba(242, 201, 76, 0.3);
-}
-
-.sensory-item:nth-child(3) {
-  background: linear-gradient(
-    135deg,
-    rgba(230, 126, 77, 0.18) 0%,
-    rgba(230, 126, 77, 0.10) 100%
-  );
-  border-color: rgba(230, 126, 77, 0.25);
-}
-
-.sensory-item:nth-child(4) {
-  background: linear-gradient(
-    135deg,
-    rgba(111, 184, 143, 0.20) 0%,
-    rgba(111, 184, 143, 0.12) 100%
-  );
-  border-color: rgba(111, 184, 143, 0.25);
-}
-
-/* BOLD hover effect */
 .sensory-item:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-width: 3px;
-}
-
-.sensory-item:nth-child(1):hover { border-color: rgba(91, 143, 196, 0.6); }
-.sensory-item:nth-child(2):hover { border-color: rgba(242, 201, 76, 0.6); }
-.sensory-item:nth-child(3):hover { border-color: rgba(230, 126, 77, 0.6); }
-.sensory-item:nth-child(4):hover { border-color: rgba(111, 184, 143, 0.6); }
-
-/* Large decorative circle in corner */
-.sensory-item::after {
-  content: '';
-  position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 28px;
-  height: 28px;
-  background: inherit;
-  border-radius: 50%;
-  opacity: 0.5;
-  border: 2px solid white;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(var(--accent-rgb, 91, 143, 196), 0.2);
 }
 
 .sensory-item strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.75rem;
-  color: var(--text-color);
+  font-size: 0.65rem;
+  color: var(--accent-color, #5B8FC4);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  margin-bottom: 8px;
-  font-weight: 800;
+  margin-bottom: 6px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.sensory-item span {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-color);
 }
 
 /* ============================================
-   MULTISPECIES CONTENT - EXPRESSIVE NARRATIVE
+   MULTISPECIES CONTENT - Clear Narrative
    ============================================ */
 .multispecies-content p {
-  margin-bottom: 20px;
-  line-height: 1.85;
-  font-size: 1.05rem;
+  margin-bottom: 18px;
+  line-height: 1.75;
+  font-size: 1rem;
 }
 
 .multispecies-content p:last-child {
   margin-bottom: 0;
 }
 
-/* BOLD chemical highlights */
+/* Subtle chemical highlights - gentle emphasis */
 .chemical-highlight {
-  background: linear-gradient(
-    120deg,
-    rgba(242, 201, 76, 0.35) 0%,
-    rgba(242, 201, 76, 0.50) 100%
-  );
-  padding: 4px 12px;
-  border-radius: 8px;
-  font-weight: 700;
+  background: rgba(242, 201, 76, 0.18);
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 600;
   color: var(--text-color);
-  font-size: 1em;
-  border: 2px solid rgba(242, 201, 76, 0.5);
-  white-space: nowrap;
-  display: inline-block;
-  transform: rotate(-1deg); /* Slight playful tilt */
+  border-bottom: 1px solid rgba(242, 201, 76, 0.3);
 }
 
 /* ============================================
-   FOOTER - BOLD NAVIGATION
+   FOOTER - Minimal Navigation
    ============================================ */
 footer {
   text-align: center;
-  margin-top: 64px;
-  font-size: 0.9rem;
+  margin-top: 56px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(45, 36, 32, 0.06);
+  font-size: 0.85rem;
   color: var(--secondary-text);
-  position: relative;
-}
-
-/* Decorative watercolor splash */
-footer::before {
-  content: '';
-  position: absolute;
-  top: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
-  background: var(--accent-color, #5B8FC4);
-  opacity: 0.05;
-  border-radius: 50%;
-  z-index: -1;
 }
 
 .back-link {
   display: inline-block;
-  margin-bottom: 20px;
-  padding: 16px 40px;
-  color: white;
+  margin-bottom: 16px;
+  padding: 12px 32px;
+  color: var(--accent-color, #5B8FC4);
   text-decoration: none;
   font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 
-  /* BOLD COLORED BACKGROUND */
-  background: linear-gradient(
-    135deg,
-    var(--accent-color, #5B8FC4) 0%,
-    rgba(242, 201, 76, 0.9) 100%
-  );
-  border: none;
-  border-radius: 30px;
+  /* Simple border, no fill */
+  border: 1px solid currentColor;
+  border-radius: 20px;
 
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(91, 143, 196, 0.25);
-
-  position: relative;
-  overflow: hidden;
-}
-
-/* Hover shimmer effect */
-.back-link::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(
-    45deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.3) 50%,
-    transparent 70%
-  );
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.back-link:hover::before {
-  transform: translateX(100%);
+  background: transparent;
+  transition: all 0.25s ease;
 }
 
 .back-link:hover,
 .back-link:active {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 24px rgba(91, 143, 196, 0.35);
+  background-color: var(--accent-color, #5B8FC4);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(91, 143, 196, 0.15);
 }
 
 /* ============================================
-   SAUCE-SPECIFIC BOLD THEMES
+   SAUCE-SPECIFIC THEMES
+   Use CSS custom properties with RGB values
    ============================================ */
 
-body.theme-toum { --accent-color: #5B8FC4; }
-body.theme-skordalia { --accent-color: #5B8FC4; }
-body.theme-beurre { --accent-color: #5B8FC4; }
-body.theme-harissa { --accent-color: #6FB88F; }
-body.theme-mojo { --accent-color: #6FB88F; }
-body.theme-laba { --accent-color: #F2C94C; }
-body.theme-patak { --accent-color: #F2C94C; }
-body.theme-black { --accent-color: #F2C94C; }
-body.theme-macha { --accent-color: #E67E4D; }
+/* Mediterranean/Europe - Blue */
+body.theme-toum,
+body.theme-skordalia,
+body.theme-beurre {
+  --accent-color: #5B8FC4;
+  --accent-rgb: 91, 143, 196;
+}
+
+/* Africa - Mint Green */
+body.theme-harissa,
+body.theme-mojo {
+  --accent-color: #6FB88F;
+  --accent-rgb: 111, 184, 143;
+}
+
+/* Asia - Golden Yellow */
+body.theme-laba,
+body.theme-patak,
+body.theme-black {
+  --accent-color: #F2C94C;
+  --accent-rgb: 242, 201, 76;
+}
+
+/* North America - Coral Orange */
+body.theme-macha {
+  --accent-color: #E67E4D;
+  --accent-rgb: 230, 126, 77;
+}
 
 /* ============================================
-   INDEX PAGE - BOLD COLLECTION GRID
+   INDEX PAGE - Clean Collection List
    ============================================ */
 .collection-list {
   list-style: none;
@@ -485,7 +275,7 @@ body.theme-macha { --accent-color: #E67E4D; }
 }
 
 .collection-item {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .collection-link {
@@ -493,115 +283,79 @@ body.theme-macha { --accent-color: #E67E4D; }
   color: inherit;
   display: flex;
   align-items: center;
-  padding: 24px 28px;
+  padding: 20px 24px;
 
-  /* BOLD colored border */
-  border: 3px solid rgba(91, 143, 196, 0.2);
-  border-radius: 24px;
+  border: 1px solid rgba(45, 36, 32, 0.08);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.6);
 
-  background: linear-gradient(
-    110deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(245, 243, 237, 0.95) 100%
-  );
+  transition: all 0.25s ease;
 
-  transition: all 0.4s ease;
-  box-shadow: 0 4px 20px rgba(45, 36, 32, 0.06);
-  position: relative;
-  overflow: hidden;
-}
-
-/* BOLD watercolor splash on hover */
-.collection-link::before {
-  content: '';
-  position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 140px;
-  height: 140px;
-  background: linear-gradient(
-    135deg,
-    rgba(91, 143, 196, 0.15) 0%,
-    rgba(242, 201, 76, 0.12) 100%
-  );
-  border-radius: 48% 52% 55% 45% / 52% 48% 52% 48%;
-  opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.collection-link:hover::before {
-  opacity: 1;
-  transform: translateY(-50%) scale(1.2);
+  /* Subtle left accent */
+  border-left: 2px solid rgba(91, 143, 196, 0.15);
 }
 
 .collection-link:hover,
 .collection-link:active {
-  border-color: rgba(91, 143, 196, 0.5);
-  background: linear-gradient(
-    110deg,
-    rgba(91, 143, 196, 0.08) 0%,
-    rgba(242, 201, 76, 0.06) 100%
-  );
-  transform: translateX(8px) scale(1.02);
-  box-shadow: 0 8px 32px rgba(91, 143, 196, 0.2);
+  background: rgba(255, 255, 255, 0.95);
+  border-left-color: rgba(91, 143, 196, 0.5);
+  border-color: rgba(91, 143, 196, 0.15);
+  transform: translateX(4px);
+  box-shadow: 0 2px 12px rgba(91, 143, 196, 0.08);
 }
 
 .collection-link .flag {
-  font-size: 2.5rem;
-  margin-right: 20px;
+  font-size: 2rem;
+  margin-right: 18px;
   margin-bottom: 0;
   line-height: 1;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
 }
 
 .collection-link strong {
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-weight: 600;
+  font-size: 1.05rem;
   color: var(--text-color);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
 }
 
 /* ============================================
-   RESPONSIVE - MAINTAIN BOLDNESS
+   RESPONSIVE - Maintain Clarity
    ============================================ */
 @media (max-width: 480px) {
   body {
-    padding: 32px 20px;
+    padding: 36px 20px;
   }
 
   h1 {
-    font-size: 2.5rem;
-    letter-spacing: 0.06em;
+    font-size: 2rem;
+    letter-spacing: 0.12em;
   }
 
   .flag {
-    font-size: 4.5rem;
+    font-size: 3rem;
   }
 
   .sensory-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 14px;
   }
 
   section {
-    padding: 28px 24px;
-    border-radius: 24px;
+    padding: 24px 20px;
+    margin-bottom: 28px;
   }
 
-  section::before,
-  section::after {
-    width: 150px;
-    height: 150px;
+  .collection-link {
+    padding: 18px 20px;
   }
 }
 
 /* ============================================
-   ACCESSIBILITY - BOLD BUT ACCESSIBLE
+   ACCESSIBILITY
    ============================================ */
 a:focus,
 button:focus {
-  outline: 4px solid var(--accent-color, #5B8FC4);
+  outline: 2px solid var(--accent-color, #5B8FC4);
   outline-offset: 3px;
 }
 
@@ -610,27 +364,27 @@ button:focus {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  .flag {
-    animation: none;
   }
 }
 
 /* ============================================
-   PRINT OPTIMIZATION - Maintain Artistic Style
+   SUBTLE HAND-DRAWN DETAILS
+   Optional: Add paper texture feel
    ============================================ */
-@media print {
-  body {
-    background: white;
-  }
 
-  section::before,
-  section::after,
-  header::before,
-  header::after {
-    opacity: 0.3; /* Lighter for print */
-  }
+/* Very subtle paper grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.015;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
 }
