@@ -1,0 +1,125 @@
+:root {
+  --bg-color: #FDFBF7; /* Cream/Paper */
+  --text-color: #2D2420; /* Dark Brown */
+  --accent-color: #D35400; /* Burnt Orange */
+  --secondary-text: #5D5654;
+  --card-bg: #FFFFFF;
+  --border-color: #E5E0D8;
+  --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Georgia", serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.flag {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--secondary-text);
+  font-style: italic;
+}
+
+section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 5px;
+}
+
+.sensory-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.sensory-item strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  text-transform: uppercase;
+}
+
+.multispecies-content p {
+  margin-bottom: 15px;
+}
+
+.chemical-highlight {
+  background-color: #FFF8E1;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: #B7791F;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  border-top: 1px solid var(--border-color);
+  padding-top: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: bold;
+}
+
+/* Specific Sauce Themes (Optional overrides) */
+body.theme-toum { --accent-color: #3498DB; } /* Blue for white/clean */
+body.theme-mojo { --accent-color: #27AE60; } /* Green */
+body.theme-macha { --accent-color: #C0392B; } /* Red */
+body.theme-laba { --accent-color: #16A085; } /* Jade */
+body.theme-black { --accent-color: #2C3E50; } /* Black */

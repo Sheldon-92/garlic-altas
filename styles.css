@@ -629,7 +629,319 @@ body.theme-macha {
 }
 
 /* ============================================
-   ACCESSIBILITY
+   HAND-DRAWN INGREDIENT ILLUSTRATIONS
+   Pure CSS doodles inspired by 手帐 aesthetics
+   ============================================ */
+
+/* Container for ingredient doodles */
+.ingredient-doodle {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin: 10px;
+}
+
+/* GARLIC BULB - Simple line drawing */
+.doodle-garlic {
+  position: relative;
+  width: 60px;
+  height: 55px;
+  margin: 20px auto;
+}
+
+.doodle-garlic::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 40px;
+  background: transparent;
+  border: 2.5px solid var(--text-color);
+  border-radius: 45% 45% 50% 50%;
+  opacity: 0.7;
+}
+
+/* Garlic clove segments - sketchy lines */
+.doodle-garlic::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;
+  background: var(--text-color);
+  opacity: 0.4;
+  box-shadow:
+    -10px 0 0 var(--text-color),
+    10px 0 0 var(--text-color);
+}
+
+/* CHILI PEPPER - Curved shape */
+.doodle-chili {
+  position: relative;
+  width: 50px;
+  height: 70px;
+  margin: 15px auto;
+}
+
+.doodle-chili::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 50px;
+  background: transparent;
+  border: 2.5px solid var(--accent-color, #E67E4D);
+  border-radius: 40% 40% 50% 35%;
+  transform: rotate(-10deg);
+  opacity: 0.7;
+}
+
+/* Chili stem */
+.doodle-chili::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 22px;
+  width: 12px;
+  height: 10px;
+  background: transparent;
+  border: 2px solid var(--accent-color, #6FB88F);
+  border-bottom: none;
+  border-radius: 50% 50% 0 0;
+  opacity: 0.6;
+}
+
+/* LEMON - Simple circle with segments */
+.doodle-lemon {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  margin: 20px auto;
+}
+
+.doodle-lemon::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: 2.5px solid var(--accent-color, #F2C94C);
+  border-radius: 50% 45% 50% 45%;
+  opacity: 0.7;
+  transform: rotate(-15deg);
+}
+
+/* Lemon segments - radiating lines */
+.doodle-lemon::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 2px;
+  height: 15px;
+  background: var(--accent-color, #F2C94C);
+  opacity: 0.4;
+  transform: rotate(45deg);
+  transform-origin: center;
+  box-shadow:
+    0 0 0 2px var(--accent-color, #F2C94C),
+    0 0 0 2px var(--accent-color, #F2C94C);
+}
+
+/* HERB SPRIG - Botanical sketch style */
+.doodle-herb {
+  position: relative;
+  width: 40px;
+  height: 70px;
+  margin: 10px auto;
+}
+
+/* Herb stem */
+.doodle-herb::before {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+  width: 2px;
+  height: 60px;
+  background: var(--accent-color, #6FB88F);
+  opacity: 0.6;
+}
+
+/* Herb leaves - small ovals */
+.doodle-herb::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 12px;
+  width: 8px;
+  height: 15px;
+  background: transparent;
+  border: 2px solid var(--accent-color, #6FB88F);
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: rotate(-30deg);
+  box-shadow:
+    18px 0 0 -1px transparent,
+    18px 0 0 1px var(--accent-color, #6FB88F),
+    5px 15px 0 -1px transparent,
+    5px 15px 0 1px var(--accent-color, #6FB88F),
+    15px 15px 0 -1px transparent,
+    15px 15px 0 1px var(--accent-color, #6FB88F);
+}
+
+/* DECORATIVE MARGIN SKETCHES */
+.margin-sketch {
+  position: absolute;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.margin-sketch-top-right {
+  top: -15px;
+  right: -10px;
+  transform: rotate(15deg);
+}
+
+.margin-sketch-bottom-left {
+  bottom: -15px;
+  left: -10px;
+  transform: rotate(-12deg);
+}
+
+/* HAND-DRAWN DIVIDER - Botanical style */
+.botanical-divider {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botanical-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 40%;
+  height: 1.5px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--secondary-text) 0px,
+    var(--secondary-text) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  opacity: 0.3;
+  transform: rotate(-0.5deg);
+}
+
+.botanical-divider::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 40%;
+  height: 1.5px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--secondary-text) 0px,
+    var(--secondary-text) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  opacity: 0.3;
+  transform: rotate(0.5deg);
+}
+
+/* Central decorative element */
+.botanical-divider-center {
+  width: 25px;
+  height: 25px;
+  border: 2px solid var(--secondary-text);
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0.2;
+  position: relative;
+  z-index: 1;
+}
+
+/* INGREDIENT BADGE - Small labeled doodles */
+.ingredient-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px 12px;
+  transform: rotate(-2deg);
+}
+
+.ingredient-badge:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.ingredient-badge-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--secondary-text);
+  margin-top: 5px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* INGREDIENT ILLUSTRATION CONTAINER */
+.illustration-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 15px 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  position: relative;
+}
+
+/* Small corner doodles for sections */
+.corner-doodle {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.corner-doodle-tl {
+  top: 5px;
+  left: 5px;
+  transform: rotate(-15deg);
+}
+
+.corner-doodle-br {
+  bottom: 5px;
+  right: 5px;
+  transform: rotate(15deg);
+}
+
+/* Enhanced section decorations with ingredient context */
+section.has-illustration {
+  position: relative;
+}
+
+section.has-illustration::after {
+  /* Override the star with ingredient-specific doodles */
+  content: none;
+}
+
+/* ACCESSIBILITY
    ============================================ */
 a:focus,
 button:focus {
@@ -652,7 +964,10 @@ button:focus {
   header,
   h1,
   h2,
-  .collection-link {
+  .collection-link,
+  .ingredient-badge,
+  .botanical-divider::before,
+  .botanical-divider::after {
     transform: none !important;
   }
 }
