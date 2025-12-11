@@ -1,33 +1,36 @@
 /* ============================================
-   GARLIC ATLAS - Refined Hand-Drawn Edition
-   Design Philosophy: SIMPLICITY + SUBTLE CHARACTER
-   Less decoration, more elegance
+   GARLIC ATLAS - Bullet Journal Edition
+   Design Philosophy: Handwritten journal aesthetic
+   Like a personal recipe journal with hand-drawn touches
    ============================================ */
+
+/* Import handwriting fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Patrick+Hand&display=swap');
 
 /* ============================================
    COLOR PALETTE
    ============================================ */
 :root {
-  /* Background - Warm paper tone */
+  /* Notebook paper background */
   --bg-color: #F5F3ED;
 
-  /* Typography */
+  /* Handwritten ink colors */
   --text-color: #2D2420;
   --secondary-text: #5D5654;
 
-  /* Continental accent colors - used sparingly */
+  /* Continental accent colors - like colored pens */
   --color-asia: #F2C94C;
   --color-europe: #5B8FC4;
   --color-north-america: #E67E4D;
   --color-africa: #6FB88F;
 
-  /* Typography */
-  --font-heading: "Helvetica Neue", "Arial", sans-serif;
-  --font-body: "Georgia", "Times New Roman", serif;
+  /* Handwriting fonts */
+  --font-heading: 'Caveat', cursive;
+  --font-body: 'Patrick Hand', cursive;
 }
 
 /* ============================================
-   GLOBAL BASE - Clean Foundation
+   GLOBAL BASE - Journal Page Feel
    ============================================ */
 * {
   box-sizing: border-box;
@@ -39,204 +42,273 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-body);
-  line-height: 1.7;
-  padding: 48px 24px;
-  max-width: 580px;
+  line-height: 1.8;
+  padding: 40px 24px;
+  max-width: 600px;
   margin: 0 auto;
 
-  /* ONE subtle watercolor wash - barely visible */
-  background-image: radial-gradient(
-    circle at 70% 25%,
-    rgba(91, 143, 196, 0.035) 0%,
-    transparent 65%
-  );
+  /* Subtle ruled notebook lines in background */
+  background-image:
+    repeating-linear-gradient(
+      transparent,
+      transparent 31px,
+      rgba(91, 143, 196, 0.04) 31px,
+      rgba(91, 143, 196, 0.04) 32px
+    );
 }
 
 /* ============================================
-   HEADER - Refined and Elegant
+   HEADER - Hand-Lettered Title
    ============================================ */
 header {
   text-align: center;
-  margin-bottom: 52px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid rgba(45, 36, 32, 0.06);
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Simple hand-drawn line under header */
+header::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 2px;
+  background: var(--accent-color, #5B8FC4);
+  margin: 16px auto 0;
+  border-radius: 1px;
+  opacity: 0.3;
 }
 
 .flag {
-  font-size: 3.5rem;
+  font-size: 3rem;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   line-height: 1;
-  opacity: 0.95;
 }
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
-  font-weight: 300;
-  margin-bottom: 14px;
-  letter-spacing: 0.18em; /* Wide, elegant spacing */
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
   line-height: 1.2;
-  text-transform: uppercase;
   color: var(--text-color);
+  text-transform: none; /* Keep natural handwriting feel */
 }
 
 .tagline {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--secondary-text);
-  font-style: italic;
+  font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 /* ============================================
-   SECTIONS - Clean Cards with Subtle Character
+   SECTIONS - Hand-Drawn Boxes
    ============================================ */
 section {
-  background: rgba(255, 255, 255, 0.75);
-  border: 1px solid rgba(45, 36, 32, 0.08);
-  border-radius: 6px;
-  padding: 32px 28px;
-  margin-bottom: 36px; /* Generous whitespace between sections */
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--accent-color, #5B8FC4);
+  border-radius: 3px;
+  padding: 28px 24px;
+  margin-bottom: 32px;
+  position: relative;
 
-  /* Minimal shadow - just enough for depth */
-  box-shadow: 0 1px 3px rgba(45, 36, 32, 0.03);
+  /* Slight offset shadow - like marker bleed */
+  box-shadow: 3px 3px 0 rgba(var(--accent-rgb, 91, 143, 196), 0.08);
 
-  /* Subtle accent color hint on left edge */
-  border-left: 2px solid rgba(var(--accent-rgb, 91, 143, 196), 0.2);
+  /* Very subtle border opacity for hand-drawn feel */
+  opacity: 0.98;
+}
+
+/* Small star decoration in corner - like bullet journal */
+section::before {
+  content: '★';
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 0.9rem;
+  color: var(--accent-color, #5B8FC4);
+  opacity: 0.25;
+  line-height: 1;
 }
 
 /* ============================================
-   SECTION HEADINGS - Hand-Drawn Typography
+   SECTION HEADINGS - Handwritten Headers
    ============================================ */
 h2 {
   font-family: var(--font-heading);
-  font-size: 0.7rem;
+  font-size: 1.4rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.28em; /* Very wide, refined */
+  text-transform: none; /* Keep natural handwriting */
+  letter-spacing: 0.02em;
   color: var(--accent-color, #5B8FC4);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  position: relative;
+}
 
-  /* Simple underline - hand-drawn quality */
-  border-bottom: 1px solid currentColor;
-  opacity: 0.85;
+/* Hand-drawn underline */
+h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: currentColor;
+  margin-top: 6px;
+  border-radius: 1px;
+  opacity: 0.4;
 }
 
 /* ============================================
-   SENSORY GRID - Minimal and Clear
+   SENSORY GRID - Journal Entry Boxes
    ============================================ */
 .sensory-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 20px;
+  gap: 14px;
+  margin-top: 18px;
 }
 
 .sensory-item {
-  background: rgba(255, 255, 255, 0.5);
-  padding: 18px 16px;
-  border-radius: 4px;
-  border: 1px solid rgba(45, 36, 32, 0.06);
+  background: rgba(255, 255, 255, 0.6);
+  padding: 16px 14px;
+  border-radius: 2px;
+  border: 1.5px dashed rgba(var(--accent-rgb, 91, 143, 196), 0.3);
+  position: relative;
 
-  /* Subtle hover - not dramatic */
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  /* Subtle hover */
+  transition: all 0.2s ease;
 }
 
 .sensory-item:hover {
   background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(var(--accent-rgb, 91, 143, 196), 0.2);
+  border-color: rgba(var(--accent-rgb, 91, 143, 196), 0.5);
+  transform: translateY(-1px);
+}
+
+/* Small bullet point decoration */
+.sensory-item::before {
+  content: '•';
+  position: absolute;
+  top: 12px;
+  left: 6px;
+  font-size: 1rem;
+  color: var(--accent-color, #5B8FC4);
+  opacity: 0.4;
+  line-height: 1;
 }
 
 .sensory-item strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.65rem;
+  font-size: 1rem;
   color: var(--accent-color, #5B8FC4);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  text-transform: none;
+  letter-spacing: 0.01em;
   margin-bottom: 6px;
   font-weight: 600;
-  opacity: 0.8;
+  padding-left: 12px; /* Space for bullet point */
 }
 
 .sensory-item span {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--text-color);
+  display: block;
+  padding-left: 12px; /* Align with header */
 }
 
 /* ============================================
-   MULTISPECIES CONTENT - Clear Narrative
+   MULTISPECIES CONTENT - Journal Entry Text
    ============================================ */
 .multispecies-content p {
-  margin-bottom: 18px;
-  line-height: 1.75;
-  font-size: 1rem;
+  margin-bottom: 16px;
+  line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 .multispecies-content p:last-child {
   margin-bottom: 0;
 }
 
-/* Subtle chemical highlights - gentle emphasis */
+/* Hand-drawn highlight - like using a highlighter pen */
 .chemical-highlight {
-  background: rgba(242, 201, 76, 0.18);
-  padding: 2px 7px;
-  border-radius: 3px;
+  background: rgba(242, 201, 76, 0.25);
+  padding: 2px 6px;
+  border-radius: 2px;
   font-weight: 600;
   color: var(--text-color);
-  border-bottom: 1px solid rgba(242, 201, 76, 0.3);
+  border-bottom: 2px solid rgba(242, 201, 76, 0.4);
+  display: inline;
 }
 
 /* ============================================
-   FOOTER - Minimal Navigation
+   FOOTER - Simple Journal Footer
    ============================================ */
 footer {
   text-align: center;
-  margin-top: 56px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(45, 36, 32, 0.06);
-  font-size: 0.85rem;
+  margin-top: 48px;
+  padding-top: 20px;
+  font-size: 0.9rem;
   color: var(--secondary-text);
+  position: relative;
+}
+
+/* Simple dotted line separator */
+footer::before {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: transparent;
+  border-top: 2px dotted rgba(45, 36, 32, 0.15);
+  margin: 0 auto 20px;
 }
 
 .back-link {
   display: inline-block;
-  margin-bottom: 16px;
-  padding: 12px 32px;
+  margin-bottom: 14px;
+  padding: 10px 28px;
   color: var(--accent-color, #5B8FC4);
   text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 600;
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
 
-  /* Simple border, no fill */
-  border: 1px solid currentColor;
+  /* Hand-drawn style border */
+  border: 2px solid currentColor;
   border-radius: 20px;
 
   background: transparent;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+}
+
+/* Hand-drawn arrow before text */
+.back-link::before {
+  content: '← ';
+  margin-right: 4px;
 }
 
 .back-link:hover,
 .back-link:active {
   background-color: var(--accent-color, #5B8FC4);
   color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(91, 143, 196, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 0 rgba(var(--accent-rgb, 91, 143, 196), 0.2);
 }
 
 /* ============================================
    SAUCE-SPECIFIC THEMES
-   Use CSS custom properties with RGB values
+   Different colored pen colors for each region
    ============================================ */
 
-/* Mediterranean/Europe - Blue */
+/* Mediterranean/Europe - Blue pen */
 body.theme-toum,
 body.theme-skordalia,
 body.theme-beurre {
@@ -244,14 +316,14 @@ body.theme-beurre {
   --accent-rgb: 91, 143, 196;
 }
 
-/* Africa - Mint Green */
+/* Africa - Green pen */
 body.theme-harissa,
 body.theme-mojo {
   --accent-color: #6FB88F;
   --accent-rgb: 111, 184, 143;
 }
 
-/* Asia - Golden Yellow */
+/* Asia - Yellow/Gold pen */
 body.theme-laba,
 body.theme-patak,
 body.theme-black {
@@ -259,14 +331,14 @@ body.theme-black {
   --accent-rgb: 242, 201, 76;
 }
 
-/* North America - Coral Orange */
+/* North America - Orange pen */
 body.theme-macha {
   --accent-color: #E67E4D;
   --accent-rgb: 230, 126, 77;
 }
 
 /* ============================================
-   INDEX PAGE - Clean Collection List
+   INDEX PAGE - Journal Table of Contents
    ============================================ */
 .collection-list {
   list-style: none;
@@ -275,7 +347,7 @@ body.theme-macha {
 }
 
 .collection-item {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .collection-link {
@@ -283,70 +355,88 @@ body.theme-macha {
   color: inherit;
   display: flex;
   align-items: center;
-  padding: 20px 24px;
+  padding: 16px 20px;
 
-  border: 1px solid rgba(45, 36, 32, 0.08);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.6);
+  /* Hand-drawn box style */
+  border: 2px solid rgba(91, 143, 196, 0.2);
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.65);
 
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  position: relative;
+}
 
-  /* Subtle left accent */
-  border-left: 2px solid rgba(91, 143, 196, 0.15);
+/* Small arrow decoration */
+.collection-link::after {
+  content: '→';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(91, 143, 196, 0.3);
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
 }
 
 .collection-link:hover,
 .collection-link:active {
   background: rgba(255, 255, 255, 0.95);
-  border-left-color: rgba(91, 143, 196, 0.5);
-  border-color: rgba(91, 143, 196, 0.15);
+  border-color: rgba(91, 143, 196, 0.5);
   transform: translateX(4px);
-  box-shadow: 0 2px 12px rgba(91, 143, 196, 0.08);
+  box-shadow: 3px 3px 0 rgba(91, 143, 196, 0.1);
+}
+
+.collection-link:hover::after {
+  right: 12px;
+  color: rgba(91, 143, 196, 0.6);
 }
 
 .collection-link .flag {
   font-size: 2rem;
-  margin-right: 18px;
+  margin-right: 16px;
   margin-bottom: 0;
   line-height: 1;
 }
 
 .collection-link strong {
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   color: var(--text-color);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 /* ============================================
-   RESPONSIVE - Maintain Clarity
+   RESPONSIVE - Maintain Journal Feel
    ============================================ */
 @media (max-width: 480px) {
   body {
-    padding: 36px 20px;
+    padding: 32px 18px;
   }
 
   h1 {
-    font-size: 2rem;
-    letter-spacing: 0.12em;
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
   }
 
   .flag {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .sensory-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
   }
 
   section {
-    padding: 24px 20px;
-    margin-bottom: 28px;
+    padding: 22px 18px;
+    margin-bottom: 26px;
   }
 
   .collection-link {
-    padding: 18px 20px;
+    padding: 14px 16px;
   }
 }
 
@@ -355,8 +445,8 @@ body.theme-macha {
    ============================================ */
 a:focus,
 button:focus {
-  outline: 2px solid var(--accent-color, #5B8FC4);
-  outline-offset: 3px;
+  outline: 3px solid var(--accent-color, #5B8FC4);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -369,11 +459,10 @@ button:focus {
 }
 
 /* ============================================
-   SUBTLE HAND-DRAWN DETAILS
-   Optional: Add paper texture feel
+   HANDWRITTEN TEXTURE DETAILS
    ============================================ */
 
-/* Very subtle paper grain texture */
+/* Very subtle paper texture overlay */
 body::before {
   content: '';
   position: fixed;
@@ -381,10 +470,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.015;
+  opacity: 0.02;
   z-index: -1;
   pointer-events: none;
   background-image:
-    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
-    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px);
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0,0,0,0.02) 1px,
+      rgba(0,0,0,0.02) 2px
+    );
 }
