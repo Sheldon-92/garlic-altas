@@ -1,39 +1,35 @@
 /* ============================================
-   GARLIC ATLAS - NFC Web Pages
-   Design System matching Physical Map Aesthetic
+   GARLIC ATLAS - ARTISTIC EDITION
+   Matching the Hand-Drawn Watercolor Map Aesthetic
+   Design Philosophy: BOLD, PLAYFUL, ILLUSTRATION-FORWARD
    ============================================ */
 
 /* ============================================
-   COLOR PALETTE from Hand-Drawn Map
+   COLOR PALETTE - Continental Watercolors
    ============================================ */
 :root {
-  /* Map Background - Warm cream/beige */
+  /* Map Background */
   --bg-color: #F5F3ED;
 
   /* Typography */
-  --text-color: #2D2420; /* Dark brown for body text */
-  --secondary-text: #5D5654; /* Muted brown for metadata */
+  --text-color: #2D2420;
+  --secondary-text: #5D5654;
 
-  /* Continental Colors from Physical Map */
-  --color-asia: #F2C94C; /* Golden yellow */
-  --color-europe: #5B8FC4; /* Mediterranean blue */
-  --color-north-america: #E67E4D; /* Coral orange */
-  --color-south-america: #8B5A9E; /* Purple/violet */
-  --color-africa: #6FB88F; /* Mint green (African coast) */
-  --color-oceania: #6FB88F; /* Same mint green */
+  /* Continental Colors - BOLD VERSION */
+  --color-asia: #F2C94C;
+  --color-europe: #5B8FC4;
+  --color-north-america: #E67E4D;
+  --color-south-america: #8B5A9E;
+  --color-africa: #6FB88F;
+  --color-oceania: #6FB88F;
 
-  /* Neutral Elements */
-  --card-bg: #FFFFFF;
-  --border-subtle: rgba(91, 143, 196, 0.15); /* Soft blue-tinted border */
-  --shadow-soft: rgba(45, 36, 32, 0.04); /* Very subtle shadow */
-
-  /* Typography Settings */
+  /* Typography */
   --font-heading: "Helvetica Neue", "Arial", sans-serif;
   --font-body: "Georgia", "Times New Roman", serif;
 }
 
 /* ============================================
-   GLOBAL RESET & BASE STYLES
+   GLOBAL RESET & BOLD BASE
    ============================================ */
 * {
   box-sizing: border-box;
@@ -46,292 +42,441 @@ body {
   color: var(--text-color);
   font-family: var(--font-body);
   line-height: 1.75;
-  padding: 32px 20px;
+  padding: 40px 24px;
   max-width: 600px;
   margin: 0 auto;
+  position: relative;
+  overflow-x: hidden;
 
-  /* Subtle texture suggestion - very light noise */
+  /* BOLD WATERCOLOR WASHES - multiple overlapping color circles */
   background-image:
-    radial-gradient(circle at 20% 50%, rgba(242, 201, 76, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(91, 143, 196, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 15% 20%, rgba(91, 143, 196, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 40%, rgba(242, 201, 76, 0.10) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(230, 126, 77, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 60%, rgba(111, 184, 143, 0.09) 0%, transparent 35%);
 }
 
 /* ============================================
-   HEADER - Artisanal Title Treatment
+   HEADER - DRAMATIC ARTISTIC TITLE
    ============================================ */
 header {
   text-align: center;
-  margin-bottom: 48px;
-  padding-bottom: 20px;
-  /* Remove rigid border, use organic spacing instead */
+  margin-bottom: 56px;
   position: relative;
+  padding: 32px 0;
 }
 
-/* Decorative element inspired by map's organic shapes */
+/* BOLD decorative watercolor splash behind header */
+header::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: var(--accent-color, #5B8FC4);
+  opacity: 0.06;
+  border-radius: 45% 55% 52% 48% / 48% 45% 55% 52%;
+  z-index: -1;
+}
+
+/* Secondary organic shape */
 header::after {
   content: '';
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: var(--accent-color, #5B8FC4);
-  margin: 20px auto 0;
-  border-radius: 2px;
-  opacity: 0.4;
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%) rotate(12deg);
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-color, #5B8FC4) 20%,
+    var(--accent-color, #5B8FC4) 80%,
+    transparent 100%
+  );
+  opacity: 0.25;
+  border-radius: 3px;
 }
 
 .flag {
-  font-size: 4.5rem;
+  font-size: 5.5rem;
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+@keyframes gentle-bounce {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-6px) scale(1.02); }
 }
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 2.75rem;
-  font-weight: 300; /* Lighter weight for elegance */
-  margin-bottom: 14px;
-  letter-spacing: 0.15em; /* Wide letter-spacing like "GARLIC ATLAS" */
-  line-height: 1.2;
+  font-size: 3.25rem;
+  font-weight: 700; /* BOLD instead of light */
+  margin-bottom: 18px;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
   text-transform: uppercase;
-  color: var(--text-color);
+
+  /* GRADIENT TEXT EFFECT */
+  background: linear-gradient(
+    135deg,
+    var(--accent-color, #5B8FC4) 0%,
+    rgba(242, 201, 76, 0.8) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  /* Fallback for browsers that don't support background-clip */
+  color: var(--accent-color, #5B8FC4);
 }
 
 .tagline {
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: var(--secondary-text);
   font-style: italic;
-  font-weight: 400;
-  letter-spacing: 0.02em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
 /* ============================================
-   SECTIONS - Organic Card Design
+   SECTIONS - BOLD COLOR BLOCK CARDS
    ============================================ */
 section {
-  background: var(--card-bg);
-  /* Softer, more organic border */
+  /* BOLD COLORED BACKGROUND instead of white */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
   border: none;
-  border-radius: 20px; /* Increased for softer edges */
-  padding: 28px;
-  margin-bottom: 28px;
-  /* Subtle shadow for depth without harsh edges */
-  box-shadow:
-    0 1px 3px var(--shadow-soft),
-    0 8px 24px rgba(45, 36, 32, 0.03);
+  border-radius: 28px;
+  padding: 36px 32px;
+  margin-bottom: 32px;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Allow decorations to overflow */
+
+  /* Stronger shadow for more presence */
+  box-shadow:
+    0 2px 8px rgba(45, 36, 32, 0.08),
+    0 16px 48px rgba(45, 36, 32, 0.06);
+
+  /* IRREGULAR SHAPE - slight clip-path for organic feel */
+  clip-path: polygon(
+    0 2%,
+    2% 0,
+    98% 0,
+    100% 2%,
+    100% 98%,
+    98% 100%,
+    2% 100%,
+    0 98%
+  );
 }
 
-/* Organic accent shape in top-right corner */
+/* LARGE BOLD WATERCOLOR WASH behind section */
 section::before {
   content: '';
   position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 80px;
-  height: 80px;
+  top: -40px;
+  right: -40px;
+  width: 220px;
+  height: 220px;
   background: var(--accent-color, #5B8FC4);
-  opacity: 0.04;
-  border-radius: 50%;
+  opacity: 0.10;
+  border-radius: 42% 58% 55% 45% / 48% 62% 38% 52%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* SECOND ORGANIC SHAPE - layered watercolor effect */
+section::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: -30px;
+  width: 180px;
+  height: 180px;
+  background: rgba(242, 201, 76, 0.08);
+  border-radius: 60% 40% 45% 55% / 55% 48% 52% 45%;
+  z-index: -1;
   pointer-events: none;
 }
 
 /* ============================================
-   SECTION HEADINGS - Map-Inspired Typography
+   SECTION HEADINGS - BOLD ARTISTIC TYPOGRAPHY
    ============================================ */
 h2 {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 900; /* EXTRA BOLD */
   text-transform: uppercase;
-  letter-spacing: 0.2em; /* Very wide spacing */
+  letter-spacing: 0.25em;
   color: var(--accent-color, #5B8FC4);
-  margin-bottom: 20px;
-  padding-bottom: 0;
-  border-bottom: none; /* Remove rigid line */
+  margin-bottom: 24px;
   position: relative;
-  padding-left: 12px;
+  padding-left: 0;
+
+  /* Add colored underline */
+  padding-bottom: 12px;
+  border-bottom: 4px solid var(--accent-color, #5B8FC4);
+  border-radius: 2px;
+
+  /* Subtle gradient in text */
+  background: linear-gradient(
+    120deg,
+    var(--accent-color, #5B8FC4) 0%,
+    rgba(242, 201, 76, 0.9) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Organic accent mark replacing border */
+/* Decorative circle instead of line */
 h2::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 70%;
+  left: -8px;
+  top: -8px;
+  width: 12px;
+  height: 12px;
   background: var(--accent-color, #5B8FC4);
-  border-radius: 2px;
+  border-radius: 50%;
+  opacity: 0.6;
 }
 
 /* ============================================
-   SENSORY GRID - Watercolor-Inspired Boxes
+   SENSORY GRID - COLORFUL WATERCOLOR BOXES
    ============================================ */
 .sensory-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 20px;
 }
 
 .sensory-item {
-  background-color: var(--bg-color); /* Use main cream background */
-  padding: 16px;
-  border-radius: 12px;
-  border: 1px solid var(--border-subtle);
+  /* BOLD COLORED BACKGROUNDS - rotate through continental colors */
+  padding: 22px 18px;
+  border-radius: 18px;
+  border: 3px solid transparent;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  /* Stronger shadow */
+  box-shadow: 0 4px 16px rgba(45, 36, 32, 0.08);
 }
 
-/* Subtle hover state - organic interaction */
+/* Color rotation for sensory items */
+.sensory-item:nth-child(1) {
+  background: linear-gradient(
+    135deg,
+    rgba(91, 143, 196, 0.20) 0%,
+    rgba(91, 143, 196, 0.12) 100%
+  );
+  border-color: rgba(91, 143, 196, 0.25);
+}
+
+.sensory-item:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgba(242, 201, 76, 0.22) 0%,
+    rgba(242, 201, 76, 0.14) 100%
+  );
+  border-color: rgba(242, 201, 76, 0.3);
+}
+
+.sensory-item:nth-child(3) {
+  background: linear-gradient(
+    135deg,
+    rgba(230, 126, 77, 0.18) 0%,
+    rgba(230, 126, 77, 0.10) 100%
+  );
+  border-color: rgba(230, 126, 77, 0.25);
+}
+
+.sensory-item:nth-child(4) {
+  background: linear-gradient(
+    135deg,
+    rgba(111, 184, 143, 0.20) 0%,
+    rgba(111, 184, 143, 0.12) 100%
+  );
+  border-color: rgba(111, 184, 143, 0.25);
+}
+
+/* BOLD hover effect */
 .sensory-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(91, 143, 196, 0.08);
+  transform: translateY(-4px) scale(1.02);
+  border-width: 3px;
 }
 
-/* Organic accent dot */
+.sensory-item:nth-child(1):hover { border-color: rgba(91, 143, 196, 0.6); }
+.sensory-item:nth-child(2):hover { border-color: rgba(242, 201, 76, 0.6); }
+.sensory-item:nth-child(3):hover { border-color: rgba(230, 126, 77, 0.6); }
+.sensory-item:nth-child(4):hover { border-color: rgba(111, 184, 143, 0.6); }
+
+/* Large decorative circle in corner */
 .sensory-item::after {
   content: '';
   position: absolute;
-  top: 12px;
-  right: 12px;
-  width: 6px;
-  height: 6px;
-  background: var(--accent-color, #5B8FC4);
+  top: -8px;
+  right: -8px;
+  width: 28px;
+  height: 28px;
+  background: inherit;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.5;
+  border: 2px solid white;
 }
 
 .sensory-item strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.7rem;
-  color: var(--accent-color, #5B8FC4);
+  font-size: 0.75rem;
+  color: var(--text-color);
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: 6px;
-  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+  font-weight: 800;
 }
 
 /* ============================================
-   MULTISPECIES CONTENT - Narrative Flow
+   MULTISPECIES CONTENT - EXPRESSIVE NARRATIVE
    ============================================ */
 .multispecies-content p {
-  margin-bottom: 18px;
-  line-height: 1.8;
+  margin-bottom: 20px;
+  line-height: 1.85;
+  font-size: 1.05rem;
 }
 
 .multispecies-content p:last-child {
   margin-bottom: 0;
 }
 
-/* Chemical highlights with softer, more organic styling */
+/* BOLD chemical highlights */
 .chemical-highlight {
   background: linear-gradient(
     120deg,
-    rgba(242, 201, 76, 0.2) 0%,
-    rgba(242, 201, 76, 0.3) 100%
+    rgba(242, 201, 76, 0.35) 0%,
+    rgba(242, 201, 76, 0.50) 100%
   );
-  padding: 3px 9px;
-  border-radius: 6px;
-  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-weight: 700;
   color: var(--text-color);
-  font-size: 0.98em;
-  border: 1px solid rgba(242, 201, 76, 0.3);
+  font-size: 1em;
+  border: 2px solid rgba(242, 201, 76, 0.5);
   white-space: nowrap;
+  display: inline-block;
+  transform: rotate(-1deg); /* Slight playful tilt */
 }
 
 /* ============================================
-   FOOTER - Minimal & Refined
+   FOOTER - BOLD NAVIGATION
    ============================================ */
 footer {
   text-align: center;
-  margin-top: 56px;
-  font-size: 0.85rem;
+  margin-top: 64px;
+  font-size: 0.9rem;
   color: var(--secondary-text);
-  border-top: none;
-  padding-top: 0;
+  position: relative;
+}
+
+/* Decorative watercolor splash */
+footer::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: var(--accent-color, #5B8FC4);
+  opacity: 0.05;
+  border-radius: 50%;
+  z-index: -1;
 }
 
 .back-link {
   display: inline-block;
-  margin-bottom: 16px;
-  padding: 12px 28px;
-  color: var(--accent-color, #5B8FC4);
+  margin-bottom: 20px;
+  padding: 16px 40px;
+  color: white;
   text-decoration: none;
   font-family: var(--font-heading);
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  border: 2px solid var(--accent-color, #5B8FC4);
-  border-radius: 24px; /* More organic pill shape */
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  /* BOLD COLORED BACKGROUND */
+  background: linear-gradient(
+    135deg,
+    var(--accent-color, #5B8FC4) 0%,
+    rgba(242, 201, 76, 0.9) 100%
+  );
+  border: none;
+  border-radius: 30px;
+
   transition: all 0.3s ease;
-  background: transparent;
+  box-shadow: 0 4px 16px rgba(91, 143, 196, 0.25);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover shimmer effect */
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.back-link:hover::before {
+  transform: translateX(100%);
 }
 
 .back-link:hover,
 .back-link:active {
-  background-color: var(--accent-color, #5B8FC4);
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(91, 143, 196, 0.2);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(91, 143, 196, 0.35);
 }
 
 /* ============================================
-   SAUCE-SPECIFIC THEMES
-   Geographic Color Mapping from Physical Map
+   SAUCE-SPECIFIC BOLD THEMES
    ============================================ */
 
-/* TOUM - Lebanon (Mediterranean/Europe Blue) */
-body.theme-toum {
-  --accent-color: #5B8FC4;
-}
-
-/* SKORDALIA - Greece (Mediterranean/Europe Blue) */
-body.theme-skordalia {
-  --accent-color: #5B8FC4;
-}
-
-/* BEURRE - France (Europe Blue) */
-body.theme-beurre {
-  --accent-color: #5B8FC4;
-}
-
-/* HARISSA - Tunisia (Africa/Mediterranean - using blue with green hint) */
-body.theme-harissa {
-  --accent-color: #6FB88F;
-}
-
-/* MOJO VERDE - Canary Islands (Africa coast - Mint Green) */
-body.theme-mojo {
-  --accent-color: #6FB88F;
-}
-
-/* LABA GARLIC - China (Asia Golden Yellow) */
-body.theme-laba {
-  --accent-color: #F2C94C;
-}
-
-/* PATAK PICKLE - India (Asia Golden Yellow) */
-body.theme-patak {
-  --accent-color: #F2C94C;
-}
-
-/* BLACK GARLIC - Korea (Asia Golden Yellow) */
-body.theme-black {
-  --accent-color: #F2C94C;
-}
-
-/* SALSA MACHA - Mexico (North America Coral Orange) */
-body.theme-macha {
-  --accent-color: #E67E4D;
-}
+body.theme-toum { --accent-color: #5B8FC4; }
+body.theme-skordalia { --accent-color: #5B8FC4; }
+body.theme-beurre { --accent-color: #5B8FC4; }
+body.theme-harissa { --accent-color: #6FB88F; }
+body.theme-mojo { --accent-color: #6FB88F; }
+body.theme-laba { --accent-color: #F2C94C; }
+body.theme-patak { --accent-color: #F2C94C; }
+body.theme-black { --accent-color: #F2C94C; }
+body.theme-macha { --accent-color: #E67E4D; }
 
 /* ============================================
-   INDEX PAGE - Collection Grid
+   INDEX PAGE - BOLD COLLECTION GRID
    ============================================ */
 .collection-list {
   list-style: none;
@@ -340,7 +485,7 @@ body.theme-macha {
 }
 
 .collection-item {
-  margin-bottom: 18px;
+  margin-bottom: 24px;
 }
 
 .collection-link {
@@ -348,95 +493,118 @@ body.theme-macha {
   color: inherit;
   display: flex;
   align-items: center;
-  padding: 18px 20px;
-  border: 1px solid var(--border-subtle);
-  border-radius: 16px;
-  background-color: var(--card-bg);
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px var(--shadow-soft);
+  padding: 24px 28px;
+
+  /* BOLD colored border */
+  border: 3px solid rgba(91, 143, 196, 0.2);
+  border-radius: 24px;
+
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(245, 243, 237, 0.95) 100%
+  );
+
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(45, 36, 32, 0.06);
   position: relative;
   overflow: hidden;
 }
 
-/* Organic hover effect with color shift */
-.collection-link:hover,
-.collection-link:active {
-  border-color: rgba(91, 143, 196, 0.3);
-  background-color: var(--bg-color);
-  transform: translateX(4px);
-  box-shadow: 0 4px 16px rgba(91, 143, 196, 0.1);
-}
-
-/* Subtle accent gradient on hover */
+/* BOLD watercolor splash on hover */
 .collection-link::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 140px;
   background: linear-gradient(
-    180deg,
-    rgba(91, 143, 196, 0.6) 0%,
-    rgba(242, 201, 76, 0.6) 100%
+    135deg,
+    rgba(91, 143, 196, 0.15) 0%,
+    rgba(242, 201, 76, 0.12) 100%
   );
+  border-radius: 48% 52% 55% 45% / 52% 48% 52% 48%;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .collection-link:hover::before {
   opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.collection-link:hover,
+.collection-link:active {
+  border-color: rgba(91, 143, 196, 0.5);
+  background: linear-gradient(
+    110deg,
+    rgba(91, 143, 196, 0.08) 0%,
+    rgba(242, 201, 76, 0.06) 100%
+  );
+  transform: translateX(8px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(91, 143, 196, 0.2);
 }
 
 .collection-link .flag {
-  font-size: 2rem;
-  margin-right: 16px;
+  font-size: 2.5rem;
+  margin-right: 20px;
   margin-bottom: 0;
   line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
 }
 
 .collection-link strong {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.15rem;
   color: var(--text-color);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
 }
 
 /* ============================================
-   RESPONSIVE ADJUSTMENTS
+   RESPONSIVE - MAINTAIN BOLDNESS
    ============================================ */
 @media (max-width: 480px) {
   body {
-    padding: 24px 16px;
+    padding: 32px 20px;
   }
 
   h1 {
-    font-size: 2.25rem;
-    letter-spacing: 0.1em;
+    font-size: 2.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  .flag {
+    font-size: 4.5rem;
   }
 
   .sensory-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 16px;
   }
 
   section {
-    padding: 24px;
-    border-radius: 16px;
+    padding: 28px 24px;
+    border-radius: 24px;
+  }
+
+  section::before,
+  section::after {
+    width: 150px;
+    height: 150px;
   }
 }
 
 /* ============================================
-   ACCESSIBILITY ENHANCEMENTS
+   ACCESSIBILITY - BOLD BUT ACCESSIBLE
    ============================================ */
-
-/* Ensure sufficient contrast for all interactive elements */
 a:focus,
 button:focus {
-  outline: 3px solid var(--accent-color, #5B8FC4);
-  outline-offset: 2px;
+  outline: 4px solid var(--accent-color, #5B8FC4);
+  outline-offset: 3px;
 }
 
-/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -444,5 +612,25 @@ button:focus {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .flag {
+    animation: none;
+  }
+}
+
+/* ============================================
+   PRINT OPTIMIZATION - Maintain Artistic Style
+   ============================================ */
+@media print {
+  body {
+    background: white;
+  }
+
+  section::before,
+  section::after,
+  header::before,
+  header::after {
+    opacity: 0.3; /* Lighter for print */
   }
 }
