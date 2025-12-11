@@ -629,174 +629,50 @@ body.theme-macha {
 }
 
 /* ============================================
-   HAND-DRAWN INGREDIENT ILLUSTRATIONS
-   Pure CSS doodles inspired by 手帐 aesthetics
+   AUTHENTIC INGREDIENT ILLUSTRATIONS
+   Using beautiful emoji with enhanced styling
    ============================================ */
 
-/* Container for ingredient doodles */
+/* Container for all ingredient doodles - emoji or images */
 .ingredient-doodle {
   position: relative;
-  display: inline-block;
-  width: 80px;
-  height: 80px;
-  margin: 10px;
-}
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  line-height: 1;
+  min-width: 70px;
+  min-height: 70px;
 
-/* GARLIC BULB - Simple line drawing */
-.doodle-garlic {
-  position: relative;
-  width: 60px;
-  height: 55px;
-  margin: 20px auto;
-}
-
-.doodle-garlic::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 35px;
-  height: 40px;
-  background: transparent;
-  border: 2.5px solid var(--text-color);
-  border-radius: 45% 45% 50% 50%;
-  opacity: 0.7;
-}
-
-/* Garlic clove segments - sketchy lines */
-.doodle-garlic::after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 30px;
-  background: var(--text-color);
-  opacity: 0.4;
-  box-shadow:
-    -10px 0 0 var(--text-color),
-    10px 0 0 var(--text-color);
-}
-
-/* CHILI PEPPER - Curved shape */
-.doodle-chili {
-  position: relative;
-  width: 50px;
-  height: 70px;
-  margin: 15px auto;
-}
-
-.doodle-chili::before {
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 20px;
-  height: 50px;
-  background: transparent;
-  border: 2.5px solid var(--accent-color, #E67E4D);
-  border-radius: 40% 40% 50% 35%;
-  transform: rotate(-10deg);
-  opacity: 0.7;
-}
-
-/* Chili stem */
-.doodle-chili::after {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 22px;
-  width: 12px;
-  height: 10px;
-  background: transparent;
-  border: 2px solid var(--accent-color, #6FB88F);
-  border-bottom: none;
-  border-radius: 50% 50% 0 0;
-  opacity: 0.6;
-}
-
-/* LEMON - Simple circle with segments */
-.doodle-lemon {
-  position: relative;
-  width: 55px;
-  height: 55px;
-  margin: 20px auto;
-}
-
-.doodle-lemon::before {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 35px;
-  height: 35px;
-  background: transparent;
-  border: 2.5px solid var(--accent-color, #F2C94C);
-  border-radius: 50% 45% 50% 45%;
-  opacity: 0.7;
-  transform: rotate(-15deg);
-}
-
-/* Lemon segments - radiating lines */
-.doodle-lemon::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 2px;
-  height: 15px;
-  background: var(--accent-color, #F2C94C);
-  opacity: 0.4;
-  transform: rotate(45deg);
-  transform-origin: center;
-  box-shadow:
-    0 0 0 2px var(--accent-color, #F2C94C),
-    0 0 0 2px var(--accent-color, #F2C94C);
-}
-
-/* HERB SPRIG - Botanical sketch style */
-.doodle-herb {
-  position: relative;
-  width: 40px;
-  height: 70px;
-  margin: 10px auto;
-}
-
-/* Herb stem */
-.doodle-herb::before {
-  content: '';
-  position: absolute;
-  top: 5px;
-  left: 50%;
-  transform: translateX(-50%) rotate(2deg);
-  width: 2px;
-  height: 60px;
-  background: var(--accent-color, #6FB88F);
-  opacity: 0.6;
-}
-
-/* Herb leaves - small ovals */
-.doodle-herb::after {
-  content: '';
-  position: absolute;
-  top: 15px;
-  left: 12px;
-  width: 8px;
-  height: 15px;
-  background: transparent;
-  border: 2px solid var(--accent-color, #6FB88F);
+  /* Subtle hand-drawn circle background */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.3) 60%,
+    transparent 100%
+  );
   border-radius: 50%;
-  opacity: 0.5;
-  transform: rotate(-30deg);
-  box-shadow:
-    18px 0 0 -1px transparent,
-    18px 0 0 1px var(--accent-color, #6FB88F),
-    5px 15px 0 -1px transparent,
-    5px 15px 0 1px var(--accent-color, #6FB88F),
-    15px 15px 0 -1px transparent,
-    15px 15px 0 1px var(--accent-color, #6FB88F);
+
+  /* Soft shadow for depth */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+
+  /* Slight rotation for organic feel */
+  transform: rotate(-3deg);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.ingredient-doodle:hover {
+  transform: rotate(0deg) scale(1.08);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+}
+
+/* Alternate rotation for variety */
+.ingredient-badge:nth-child(even) .ingredient-doodle {
+  transform: rotate(3deg);
+}
+
+.ingredient-badge:nth-child(even) .ingredient-doodle:hover {
+  transform: rotate(0deg) scale(1.08);
 }
 
 /* DECORATIVE MARGIN SKETCHES */
