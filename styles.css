@@ -1,12 +1,14 @@
 :root {
-  --bg-color: #FDFBF7; /* Cream/Paper */
+  --bg-color: #FAF8F3; /* Warmer cream */
   --text-color: #2D2420; /* Dark Brown */
-  --accent-color: #D35400; /* Burnt Orange */
+  --accent-color: #C44D00; /* Deeper burnt orange */
   --secondary-text: #5D5654;
   --card-bg: #FFFFFF;
-  --border-color: #E5E0D8;
+  --border-color: #D8D0C5; /* Stronger border */
+  --highlight-bg: #FFEDC9; /* Warmer highlight */
+  --highlight-text: #8B5A00; /* Deeper highlight text */
   --font-heading: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-body: "Georgia", serif;
+  --font-body: Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -19,107 +21,192 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: var(--font-body);
-  line-height: 1.6;
-  padding: 20px;
+  line-height: 1.7;
+  padding: 24px 20px;
   max-width: 600px;
   margin: 0 auto;
 }
 
 header {
   text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
   border-bottom: 2px solid var(--border-color);
 }
 
 .flag {
-  font-size: 3rem;
+  font-size: 4rem;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
+  line-height: 1;
 }
 
 h1 {
   font-family: var(--font-heading);
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  letter-spacing: -0.8px;
+  line-height: 1.1;
 }
 
 .tagline {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--secondary-text);
   font-style: italic;
+  font-weight: 400;
 }
 
 section {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(45, 36, 32, 0.06);
 }
 
 h2 {
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   color: var(--accent-color);
-  margin-bottom: 15px;
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: 5px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .sensory-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 15px;
+  gap: 12px;
+}
+
+.sensory-item {
+  background-color: #F9F7F4;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
 }
 
 .sensory-item strong {
   display: block;
   font-family: var(--font-heading);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--secondary-text);
   text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+  font-weight: 700;
 }
 
 .multispecies-content p {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+}
+
+.multispecies-content p:last-child {
+  margin-bottom: 0;
 }
 
 .chemical-highlight {
-  background-color: #FFF8E1;
-  padding: 2px 5px;
-  border-radius: 4px;
-  font-weight: bold;
-  color: #B7791F;
+  background-color: var(--highlight-bg);
+  padding: 3px 7px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--highlight-text);
+  font-size: 0.98em;
 }
 
 footer {
   text-align: center;
-  margin-top: 40px;
-  font-size: 0.8rem;
+  margin-top: 48px;
+  font-size: 0.85rem;
   color: var(--secondary-text);
   border-top: 1px solid var(--border-color);
-  padding-top: 20px;
+  padding-top: 24px;
 }
 
 .back-link {
   display: inline-block;
-  margin-top: 10px;
+  margin-bottom: 12px;
+  padding: 10px 20px;
   color: var(--accent-color);
   text-decoration: none;
   font-family: var(--font-heading);
-  font-weight: bold;
+  font-weight: 700;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-/* Specific Sauce Themes (Optional overrides) */
-body.theme-toum { --accent-color: #3498DB; } /* Blue for white/clean */
-body.theme-mojo { --accent-color: #27AE60; } /* Green */
-body.theme-macha { --accent-color: #C0392B; } /* Red */
-body.theme-laba { --accent-color: #16A085; } /* Jade */
-body.theme-black { --accent-color: #2C3E50; } /* Black */
+.back-link:hover,
+.back-link:active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Specific Sauce Themes */
+body.theme-toum {
+  --accent-color: #2980B9;
+}
+
+body.theme-mojo {
+  --accent-color: #27AE60;
+}
+
+body.theme-macha {
+  --accent-color: #C0392B;
+}
+
+body.theme-laba {
+  --accent-color: #16A085;
+}
+
+body.theme-black {
+  --accent-color: #34495E;
+}
+
+/* Index Page Collection Links */
+.collection-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.collection-item {
+  margin-bottom: 16px;
+}
+
+.collection-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  transition: all 0.2s ease;
+}
+
+.collection-link:hover,
+.collection-link:active {
+  border-color: var(--accent-color);
+  background-color: #FAF8F3;
+  transform: translateX(2px);
+}
+
+.collection-link .flag {
+  font-size: 1.8rem;
+  margin-right: 12px;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.collection-link strong {
+  font-weight: 700;
+  color: var(--text-color);
+}
